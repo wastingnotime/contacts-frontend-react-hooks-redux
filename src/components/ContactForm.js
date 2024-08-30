@@ -1,12 +1,23 @@
-import React, { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { navigate } from 'hookrouter'
-import { createContact, updateContact } from '../actions'
+import { createContact, updateContact, getContact } from '../actions'
+import { useNavigate, useParams } from "react-router-dom"
 
 export default () => {
     const [value, setValue] = useState({ firstName: '', lastName: '', phoneNumber: '' })
     const currentContact = useSelector(state => state.current)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const params = useParams()
+
+    useEffect(() => {
+        if (!params.id)
+            return
+
+        dispatch(getContact(params.id))
+        return () => {
+        };
+    }, [params]);
 
     if (currentContact.id && !value.id)
         setValue({ ...currentContact })
@@ -15,6 +26,7 @@ export default () => {
         e.preventDefault()
         if (value.firstName === '' || value.lastName === '' || value.phoneNumber === '') return
         const action = value.id ? updateContact : createContact
+
         dispatch(action(value))
         navigate('/')
     }
