@@ -6,7 +6,11 @@ const API_URL = '/contacts'
 /* side effects */
 export const createContact = contact =>
     dispatch => axios.post(API_URL, contact)
-        .then(response => dispatch(createContactSuccess(response.data)))
+        .then(response => {
+            const location = response.headers['location']
+            contact.id = location.substring(location.lastIndexOf('/') + 1)
+            dispatch(createContactSuccess(contact))
+        })
         .catch(error => { throw (error) })
 
 export const updateContact = (contact) =>
