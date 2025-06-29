@@ -16,11 +16,11 @@
 
 ### execute from source code
 
-as a prerequisite it is necessary to start the backend application
+as a prerequisite, it is necessary to start the backend application
 
 open another terminal and run the backend for this project
 ```
-docker run -p 8010:8010 wastingnotime/contacts-backend-go-echo
+docker run -p 8010:8010 wastingnotime/contacts-backend-nodejs-express:latest 
 ```
 
 set node version (v21+)
