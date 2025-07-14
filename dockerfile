@@ -1,4 +1,4 @@
-FROM node:22-alpine as build-env
+FROM node:22-alpine AS build-env
 WORKDIR /usr/src/app
 
 COPY package*.json ./
@@ -8,4 +8,4 @@ COPY . .
 RUN npm run build
 
 FROM nginx:alpine
-COPY --from=build-env /usr/src/app/build /usr/share/nginx/html
+COPY --from=build-env /usr/src/app/dist /usr/share/nginx/html

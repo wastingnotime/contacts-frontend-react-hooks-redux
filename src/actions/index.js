@@ -1,7 +1,7 @@
 import { createContactSuccess, updateContactSuccess, deleteContactSuccess, getAllContactsSuccess, getContactSuccess } from './internal'
 import axios from 'axios'
 
-const API_URL = '/contacts'
+const API_URL = '/api/contacts'
 
 /* side effects */
 export const createContact = contact =>
