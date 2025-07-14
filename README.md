@@ -7,8 +7,9 @@
 * react
 * react-hooks
 * redux
+* vite
 
-## depencencies
+## dependencies
 * docker 25+
 * nvm 0.39+
 
@@ -35,10 +36,10 @@ npm i
 
 start app
 ```
-npm start
+npm run dev
 ```
 
-* just go to your browser on http://localhost:3000
+* just go to your browser on http://localhost:5173
 
 ## validating docker image locally
 
