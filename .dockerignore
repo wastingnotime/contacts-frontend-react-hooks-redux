@@ -1,14 +1,29 @@
-node_modules
-npm-debug.log
-.cache
+# ide's
 .vscode
 .idea
-dist
+
+# docker
+dockerfile
+.dockerignore
+
+# git
 .git
 .gitignore
+.github
+
+# node stuff
+node_modules
+npm-debug.log
+
+# vite
+dist
+
+# dev
 .jsbeautifyrc
 .jshintrc
-Dockerfile
-README.md
-proxy
-.dockerignore
+.nvmrc
+.eslint.config.js
+
+# misc
+readme.md
+LICENSE
